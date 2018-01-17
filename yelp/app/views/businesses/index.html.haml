@@ -3,3 +3,12 @@
     %header
       %h3= business.title
       %p= business.description
+
+= form_for :business do |f|
+  %fieldset
+    %label Add a business title
+    = f.text_field :title, label: "Title"
+    %label  Write description
+    = f.text_area :description, label: "Description", rows: 6, class: "span6"
+  %fieldset.actions.clearfix
+    %input(type="submit" value="Submit" class="btn")
