@@ -8,4 +8,11 @@ describe BusinessesController do
       expect(assigns(:businesses).first).to eq(business)
     end
   end
+
+  describe "POST create" do
+    it "create the business" do
+      post :create, business: Fabricate.attributes_for(:business)
+      expect(Business.count).to eq(1)
+    end
+  end
 end
