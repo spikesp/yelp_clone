@@ -1,0 +1,14 @@
+%header
+  %h3= @business.title
+%p= @business.description
+
+= form_for [@business, Review.new] do |f|
+  %fieldset
+    %label  Write your review
+    = f.text_area :content, label: "Content", rows: 6, class: "span6"
+  %fieldset.actions.clearfix
+    %input(type="submit" value="Submit" class="btn")
+
+- @reviews.each do |review|
+  %p= review.content
+  %p= "Write by" + " " + review.user.full_name

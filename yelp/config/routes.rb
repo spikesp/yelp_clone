@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'home', to: "businesses#index"
   post 'home', to: "businesses#create"
 
+  resources :businesses, only: [:show] do
+    resources :reviews, only: [:create]
+  end
+
   
   resources :sessions, only: [:create]
 
