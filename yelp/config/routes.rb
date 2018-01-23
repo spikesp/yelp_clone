@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'reviews', to: "reviews#index"
 
+  resources :users, only: [:index]
   
   resources :sessions, only: [:create]
 
