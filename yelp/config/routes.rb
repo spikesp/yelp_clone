@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
+  get 'reviews', to: "reviews#index"
+
   
   resources :sessions, only: [:create]
 
